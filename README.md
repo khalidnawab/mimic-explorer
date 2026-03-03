@@ -23,6 +23,18 @@ Open `http://localhost:8765` and follow the setup wizard to point at your MIMIC-
 - **Python 3.10+**
 - **MIMIC-IV dataset** — requires credentialed access via [PhysioNet](https://physionet.org/content/mimiciv/)
 
+## Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| Django 6.x + DRF | REST API backend |
+| DuckDB | High-performance analytical queries over clinical data |
+| fhir.resources | FHIR R4 resource validation and serialization |
+| orjson | Fast JSON serialization |
+| django-cors-headers | CORS support for local development |
+
+All dependencies are installed automatically via `pip install mimic-explorer`.
+
 ## Expected Data Structure
 
 MIMIC Explorer expects the standard MIMIC-IV directory layout from PhysioNet. Files can be `.csv` or `.csv.gz`.
@@ -58,14 +70,36 @@ All files are linked by `subject_id` (patient) and `hadm_id` (hospital admission
 |-------|-----------|
 | Backend | Django + Django REST Framework |
 | Frontend | React 18 + TypeScript + Tailwind CSS |
-| Database | SQLite (WAL mode) |
+| App Database | SQLite (WAL mode) |
+| Clinical Database | DuckDB |
 | FHIR | On-the-fly R4 transformation (no stored resources) |
 
-Single-user local application — no authentication, no external network calls. All data stays on your machine.
+## Security
+
+MIMIC Explorer is designed as a **single-user local application**. It binds to `localhost` only and makes no external network calls. There is no authentication layer — do not expose it to the public internet. Set the `MIMIC_DEBUG=true` environment variable to enable Django debug mode during development.
 
 ## Documentation
 
 Full API reference with all endpoints, parameters, and response shapes: **[docs/API.md](docs/API.md)**
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing, and PR guidelines.
+
+## Citation
+
+If you use MIMIC Explorer in your research, please cite it:
+
+```bibtex
+@software{nawab2025mimic_explorer,
+  title  = {MIMIC Explorer},
+  author = {Nawab, Khalid},
+  year   = {2025},
+  url    = {https://github.com/khalidnawab/mimic-explorer}
+}
+```
+
+See [CITATION.cff](CITATION.cff) for the full citation metadata.
 
 ## Author
 
@@ -73,4 +107,4 @@ Full API reference with all endpoints, parameters, and response shapes: **[docs/
 
 ## License
 
-[CC BY-NC-ND 4.0](LICENSE) — Non-commercial use only. No derivatives without permission.
+[MIT](LICENSE)

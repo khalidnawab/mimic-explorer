@@ -1,0 +1,12 @@
+# Development dependencies for MIMIC Explorer
+# Install with: pip install -r requirements-dev.txt
+
+# Testing (Django test framework is built-in, no extra test deps needed)
+
+# Linting & formatting
+ruff
+mypy
+
+# Build tools
+build
+twine

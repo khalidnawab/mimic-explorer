@@ -186,7 +186,7 @@ export default function Documentation() {
         <SubSection title="Key Design Principles">
           <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
             <li><strong>Fully local</strong> — No cloud, no accounts, no network calls. All data stays on your machine.</li>
-            <li><strong>Single-user</strong> — Designed for individual researchers; no authentication or multi-user access controls.</li>
+            <li><strong>Single-user</strong> — Designed for individual researchers; no authentication or multi-user access controls. Do not expose this application to the public internet.</li>
             <li><strong>Zero configuration</strong> — Install with pip, point at your MIMIC-IV files, and start exploring.</li>
             <li><strong>Research-first</strong> — Built for academic researchers working with MIMIC-IV for publications (e.g., JAMIA, JMIR).</li>
           </ul>

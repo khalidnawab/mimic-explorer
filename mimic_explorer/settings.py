@@ -1,6 +1,6 @@
 """Django settings for MIMIC Explorer.
 
-Single-user local application — no auth, SQLite-only, CORS wide open.
+Single-user local application — no auth, hybrid SQLite + DuckDB.
 Data directory: ~/.mimic_explorer/
 """
 
@@ -23,7 +23,7 @@ else:
     SECRET_KEY = get_random_secret_key()
     _secret_key_path.write_text(SECRET_KEY)
 
-DEBUG = True
+DEBUG = os.environ.get('MIMIC_DEBUG', 'false').lower() == 'true'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -90,7 +90,7 @@ STATIC_ROOT = DATA_DIR / 'staticfiles'
 
 # --- CORS & DRF ---
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = DEBUG or os.environ.get('MIMIC_CORS_ALL', 'false').lower() == 'true'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
