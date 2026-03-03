@@ -93,4 +93,10 @@ information on the researcher's own machine.
 - **Synthetic test dataset**: A 10-patient fictional dataset is included for
   testing and demonstration without requiring MIMIC-IV access.
 
+# Acknowledgements
+
+Development of MIMIC Explorer was assisted by Claude Code (Anthropic), an
+AI-powered software engineering tool used for code generation, testing, and
+documentation.
+
 # References

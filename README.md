@@ -182,6 +182,8 @@ See [CITATION.cff](CITATION.cff) for the full citation metadata.
 
 **Khalid Nawab** — khalid.nwb@gmail.com
 
+Development assisted by [Claude Code](https://claude.ai/claude-code) (Anthropic).
+
 ## License
 
 [MIT](LICENSE)
