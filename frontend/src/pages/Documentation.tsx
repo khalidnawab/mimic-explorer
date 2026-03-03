@@ -501,6 +501,25 @@ export default function Documentation() {
           </p>
         </SubSection>
 
+        <SubSection title="Sample Test Dataset">
+          <p className="text-sm text-gray-700 mb-2">
+            A synthetic dataset with 10 fictional patients is included for testing and demonstration at:
+          </p>
+          <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm mb-2">
+            tests/fixtures/mimic-iv-test/
+          </div>
+          <p className="text-sm text-gray-700 mb-2">
+            This data is entirely made up and contains no real patient information. To try MIMIC Explorer
+            without MIMIC-IV access, point the setup wizard at this folder. It includes hospital data
+            (patients, admissions, labs, medications, diagnoses, procedures), ICU data (stays, vital signs),
+            and discharge notes.
+          </p>
+          <p className="text-sm text-gray-700">
+            You can also run the automated test suite against this data
+            with <Code>mimic-explorer --test</Code>.
+          </p>
+        </SubSection>
+
         <SubSection title="Setup Wizard">
           <p className="text-sm text-gray-700 mb-3">
             The wizard walks you through 6 steps:

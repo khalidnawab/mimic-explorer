@@ -64,6 +64,23 @@ mimic-iv/
 
 All files are linked by `subject_id` (patient) and `hadm_id` (hospital admission). The importer loads patients first, then joins all downstream data against existing patients — if you set a patient limit, everything is automatically scoped.
 
+## Sample Test Dataset
+
+A synthetic dataset with 10 fictional patients is included at `tests/fixtures/mimic-iv-test/` for testing and demonstration. This data is entirely made up and contains no real patient information. To try MIMIC Explorer without MIMIC-IV access, point the setup wizard at this folder:
+
+```
+tests/fixtures/mimic-iv-test/
+├── hosp/       10 patients, 12 admissions, labs, meds, diagnoses, procedures
+├── icu/        ICU stays, vital signs (chartevents)
+└── note/       3 discharge notes
+```
+
+You can also run the automated test suite against this data:
+
+```bash
+mimic-explorer --test
+```
+
 ## Architecture
 
 | Layer | Technology |
