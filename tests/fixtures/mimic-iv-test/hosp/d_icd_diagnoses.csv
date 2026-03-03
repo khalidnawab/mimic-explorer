@@ -1,0 +1,9 @@
+icd_code,icd_version,long_title
+A4189,10,Other specified sepsis
+I10,10,Essential (primary) hypertension
+E119,10,"Type 2 diabetes mellitus without complications"
+J189,10,"Pneumonia, unspecified organism"
+N179,10,"Acute kidney failure, unspecified"
+I5033,10,"Acute on chronic diastolic (congestive) heart failure"
+4019,9,"Hypertension NOS"
+25000,9,"Diabetes mellitus type II"

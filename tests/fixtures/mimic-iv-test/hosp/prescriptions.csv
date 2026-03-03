@@ -1,0 +1,6 @@
+subject_id,hadm_id,pharmacy_id,poe_id,starttime,stoptime,drug_type,drug,gsn,ndc,prod_strength,form_rx,dose_val_rx,dose_unit_rx,form_val_disp,form_unit_disp,doses_per_24_hrs,route
+10001,20001,1001,POE001,2150-03-15 10:00:00,2150-03-22 14:00:00,MAIN,Metoprolol Tartrate,,00000001,25mg,TAB,25,mg,1,TAB,2,PO
+10001,20001,1002,POE002,2150-03-15 10:00:00,2150-03-22 14:00:00,MAIN,Lisinopril,,00000002,10mg,TAB,10,mg,1,TAB,1,PO
+10002,20003,1003,POE003,2148-05-20 16:00:00,2148-06-01 10:00:00,MAIN,Vancomycin,,00000003,1g,VIAL,1,g,1,VIAL,2,IV
+10003,20004,1004,POE004,2180-01-05 08:00:00,2180-01-20 16:00:00,MAIN,Furosemide,,00000004,40mg,TAB,40,mg,1,TAB,2,PO
+10005,20007,1005,POE005,2170-07-25 18:00:00,2170-08-02 10:00:00,MAIN,Aspirin,,00000005,81mg,TAB,81,mg,1,TAB,1,PO

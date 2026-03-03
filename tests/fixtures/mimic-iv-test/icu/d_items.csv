@@ -1,0 +1,9 @@
+itemid,label,abbreviation,linksto,category
+220045,Heart Rate,HR,chartevents,Routine Vital Signs
+220050,Arterial Blood Pressure systolic,ABPs,chartevents,Routine Vital Signs
+220051,Arterial Blood Pressure diastolic,ABPd,chartevents,Routine Vital Signs
+220179,Non Invasive Blood Pressure systolic,NBPs,chartevents,Routine Vital Signs
+220180,Non Invasive Blood Pressure diastolic,NBPd,chartevents,Routine Vital Signs
+220210,Respiratory Rate,RR,chartevents,Routine Vital Signs
+220277,SpO2,,chartevents,Routine Vital Signs
+223761,Temperature Fahrenheit,Temp F,chartevents,Routine Vital Signs

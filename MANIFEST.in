@@ -1,0 +1,4 @@
+include manage.py
+recursive-include templates *.html
+recursive-include static *
+recursive-include core/management *

@@ -1,0 +1,4 @@
+note_id,subject_id,hadm_id,note_type,note_seq,charttime,storetime,text
+N001,10001,20001,DS,1,2150-03-22 12:00:00,2150-03-22 13:00:00,"Patient is a 65 year old male with history of hypertension and diabetes who was admitted for acute kidney injury."
+N002,10002,20003,DS,1,2148-06-01 08:00:00,2148-06-01 09:00:00,"Patient is a 45 year old female with sepsis secondary to pneumonia requiring ICU admission and mechanical ventilation."
+N003,10003,20005,DS,1,2180-06-14 10:00:00,2180-06-14 11:00:00,"Patient is a 72 year old male with worsening sepsis and multiorgan failure. Patient expired on hospital day 5."
