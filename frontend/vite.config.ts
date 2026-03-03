@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../static/frontend',
+    outDir: '../mimic_explorer/static/frontend',
     emptyOutDir: true,
     rollupOptions: {
       output: {

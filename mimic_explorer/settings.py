@@ -53,7 +53,7 @@ ROOT_URLCONF = 'mimic_explorer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [Path(__file__).resolve().parent / 'templates', BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +85,7 @@ DUCKDB_PATH = DATA_DIR / 'clinical.duckdb'
 # --- Static files ---
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [Path(__file__).resolve().parent / 'static', BASE_DIR / 'static']
 STATIC_ROOT = DATA_DIR / 'staticfiles'
 
 # --- CORS & DRF ---

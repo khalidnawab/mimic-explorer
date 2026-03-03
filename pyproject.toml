@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mimic-explorer"
-version = "0.1.1"
+version = "0.1.2"
 description = "A locally installable EHR research sandbox for the MIMIC-IV dataset"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -44,4 +44,5 @@ mimic-explorer = "mimic_explorer.cli:main"
 include = ["mimic_explorer*", "core*", "patients*", "clinical*", "fhir*", "research*", "dashboards*", "tests*"]
 
 [tool.setuptools.package-data]
-"*" = ["templates/*.html", "static/**/*", "fixtures/**/*"]
+"*" = ["fixtures/**/*"]
+"mimic_explorer" = ["templates/*.html", "static/**/*"]
