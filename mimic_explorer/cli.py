@@ -77,6 +77,13 @@ def main():
         action='store_true',
         help='Do not open the browser automatically',
     )
+    parser.add_argument(
+        '--data',
+        type=str,
+        default=None,
+        metavar='PATH',
+        help='Path to MIMIC-IV data folder — validates and imports on startup',
+    )
     args = parser.parse_args()
 
     if args.test:
@@ -103,6 +110,44 @@ def main():
 
     # Collect static files silently
     call_command('collectstatic', verbosity=0, interactive=False)
+
+    # Handle --data flag: validate and import MIMIC-IV data
+    if args.data:
+        from core.importer import validate_mimic_folder, MIMICImporter
+        from core.models import SystemConfig
+
+        data_path = os.path.abspath(args.data)
+        validation = validate_mimic_folder(data_path)
+        if not validation['valid']:
+            missing = ', '.join(validation['missing_required'])
+            print(f"\n  Error: Invalid MIMIC-IV folder: {data_path}")
+            print(f"  Missing required files: {missing}\n")
+            sys.exit(1)
+
+        config = SystemConfig.get_solo()
+        if config.import_status == 'completed':
+            print(f"\n  Data already imported. Use the web interface to supplement import.")
+            print(f"  To reimport, run: mimic-explorer  (then use Reset in the UI)\n")
+        else:
+            # Detect available modules
+            modules = ['hosp']
+            if validation['icu']:
+                modules.append('icu')
+            if validation['note']:
+                modules.append('note')
+
+            print(f"\n  Importing from: {data_path}")
+            print(f"  Modules: {', '.join(modules)}")
+
+            config.mimic_data_path = data_path
+            config.save()
+
+            importer = MIMICImporter(data_path, modules=modules)
+            importer.run()
+
+            config.refresh_from_db()
+            total = config.import_progress.get('total_rows', 0)
+            print(f"  Import complete! {total:,} rows imported.\n")
 
     # Check if import has been completed
     from core.models import SystemConfig

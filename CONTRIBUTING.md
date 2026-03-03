@@ -66,6 +66,22 @@ no MIMIC-IV data files are needed.
 - Include steps to reproduce, expected behavior, and actual behavior.
 - Include your Python version and operating system.
 
+## Frontend Development
+
+The frontend is a React 18 + TypeScript + Tailwind CSS single-page application
+located in `frontend/`. It builds to `static/frontend/` where Django serves it.
+
+```bash
+cd frontend
+npm install
+npm run build      # production build
+npm run dev        # development server with hot reload (port 5173)
+```
+
+The CI pipeline builds the frontend separately to catch TypeScript errors.
+If you modify frontend code, ensure `npm run build` succeeds before submitting
+a PR.
+
 ## Scope
 
 MIMIC Explorer is a research tool for the MIMIC-IV dataset. Contributions
