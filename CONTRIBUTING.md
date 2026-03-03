@@ -40,6 +40,7 @@ for contributing to MIMIC Explorer.
 
 ```bash
 mimic-explorer --test
+# or: python -m mimic_explorer --test
 ```
 
 This runs the full test suite (62 tests) using an in-memory DuckDB instance —

@@ -450,6 +450,11 @@ export default function Documentation() {
                 If you see <Code>'pip' is not recognized</Code>, try <Code>python -m pip install mimic-explorer</Code> instead.
                 If that also fails, Python may not be on your PATH — reinstall Python and make sure to check "Add python.exe to PATH".
               </InfoBox>
+              <TipBox>
+                If <Code>mimic-explorer</Code> is not recognized after installation, your Python Scripts folder may not be on
+                your PATH. You can always use the module form instead: <Code>python -m mimic_explorer</Code>. This accepts
+                all the same flags (<Code>--test</Code>, <Code>--version</Code>, <Code>--port</Code>, <Code>--data</Code>, etc.).
+              </TipBox>
             </div>
           </div>
 
@@ -479,6 +484,10 @@ export default function Documentation() {
                 On macOS, use <Code>pip3</Code> (not <Code>pip</Code>) to ensure you're using Python 3.
                 If you see a permissions error, try <Code>pip3 install --user mimic-explorer</Code>.
               </InfoBox>
+              <TipBox>
+                If <Code>mimic-explorer</Code> is not recognized after installation,
+                use <Code>python3 -m mimic_explorer</Code> instead. This accepts all the same flags.
+              </TipBox>
             </div>
           </div>
 
@@ -1168,6 +1177,8 @@ export default function Documentation() {
       <Section id="cli" title="17. Command Line Interface">
         <p className="text-sm text-gray-700 mb-4">
           MIMIC Explorer is launched via the <Code>mimic-explorer</Code> command after installation.
+          If the command is not found, you can use <Code>python -m mimic_explorer</Code> instead — it accepts
+          all the same flags.
         </p>
         <SimpleTable
           headers={['Option', 'Description']}
@@ -1176,6 +1187,7 @@ export default function Documentation() {
             ['--test', 'Run the built-in test suite to verify your installation'],
             ['--version, -V', 'Show version number'],
             ['--port PORT, -p PORT', 'Run the server on a specific port (default: auto-detect)'],
+            ['--data PATH', 'Path to MIMIC-IV data folder — validates and imports on startup'],
             ['--no-browser', 'Start the server without opening a browser'],
             ['--help, -h', 'Show help message'],
           ]}
@@ -1187,6 +1199,8 @@ export default function Documentation() {
           <p>mimic-explorer --port 8080 --no-browser</p>
           <p className="mt-2 text-gray-400"># Verify your installation is working</p>
           <p>mimic-explorer --test</p>
+          <p className="mt-2 text-gray-400"># Alternative: use the module form (always works, even if Scripts isn't on PATH)</p>
+          <p>python -m mimic_explorer</p>
         </div>
       </Section>
 

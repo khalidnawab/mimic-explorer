@@ -25,13 +25,19 @@ This installs MIMIC Explorer and all its dependencies:
 
 Python 3.10 or later is required. No external database server is needed.
 
+> **Note:** If `mimic-explorer` is not recognized after installation, your Python Scripts directory may not be on your system PATH. You can always use the module form instead:
+> ```bash
+> python -m mimic_explorer
+> ```
+> Both `mimic-explorer` and `python -m mimic_explorer` accept the same flags (`--test`, `--version`, `--port`, `--data`, etc.).
+
 ## Quick Start
 
 ### With MIMIC-IV data
 
 ```bash
 pip install mimic-explorer
-mimic-explorer
+mimic-explorer              # or: python -m mimic_explorer
 ```
 
 Your browser will open to `http://localhost:8765`. The setup wizard guides you through selecting your MIMIC-IV data folder, validating files, and importing. Start with a small patient limit (100--1,000) to test quickly, then use supplement import to add more data later.
@@ -42,7 +48,7 @@ A synthetic dataset with 10 fictional patients is included for testing and demon
 
 ```bash
 pip install mimic-explorer
-mimic-explorer --data tests/fixtures/mimic-iv-test/
+mimic-explorer --data tests/fixtures/mimic-iv-test/   # or: python -m mimic_explorer --data ...
 ```
 
 Or start the app normally and point the setup wizard at the `tests/fixtures/mimic-iv-test/` folder.
@@ -130,7 +136,7 @@ tests/fixtures/mimic-iv-test/
 You can also run the automated test suite against this data:
 
 ```bash
-mimic-explorer --test
+mimic-explorer --test              # or: python -m mimic_explorer --test
 ```
 
 All 62 tests run against this synthetic dataset using an in-memory DuckDB instance — no MIMIC-IV access is required to verify the installation.
