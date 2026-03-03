@@ -42,7 +42,7 @@ Issues = "https://github.com/khalidnawab/mimic-explorer/issues"
 mimic-explorer = "mimic_explorer.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["mimic_explorer*", "core*", "patients*", "clinical*", "fhir*", "research*", "dashboards*"]
+include = ["mimic_explorer*", "core*", "patients*", "clinical*", "fhir*", "research*", "dashboards*", "tests*"]
 
 [tool.setuptools.package-data]
-"*" = ["templates/*.html", "static/**/*"]
+"*" = ["templates/*.html", "static/**/*", "fixtures/**/*"]
