@@ -10,7 +10,7 @@ import threading
 import webbrowser
 import time
 
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 
 def find_available_port(start=8000, end=9000):
@@ -175,7 +175,7 @@ def main():
 
     # Start Django dev server
     from django.core.management import execute_from_command_line
-    sys.argv = ['manage.py', 'runserver', f'127.0.0.1:{port}', '--noreload']
+    sys.argv = ['manage.py', 'runserver', f'127.0.0.1:{port}', '--noreload', '--insecure']
     execute_from_command_line(sys.argv)
 
 
