@@ -10,7 +10,7 @@ import threading
 import webbrowser
 import time
 
-VERSION = '0.1.3'
+VERSION = '0.1.4'
 
 
 def find_available_port(start=8000, end=9000):

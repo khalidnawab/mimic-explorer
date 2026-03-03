@@ -12,6 +12,6 @@ urlpatterns = [
     # FHIR endpoints at root (not under /api/)
     path('', include('fhir.urls')),
 
-    # Catch-all: serve the React SPA
-    re_path(r'^.*$', TemplateView.as_view(template_name='index.html'), name='spa'),
+    # Catch-all: serve the React SPA (exclude /static/ so Django can serve assets)
+    re_path(r'^(?!static/).*$', TemplateView.as_view(template_name='index.html'), name='spa'),
 ]
